@@ -1,0 +1,128 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.loading {
+  background-color: hotpink;
+  color: white;
+  min-width: 150px;
+  min-height: 50px;
+
+  text-align: center;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.Header {
+  padding: 10px;
+
+  text-align: center;
+}
+
+.App {
+  margin: 0;
+
+  color: white;
+  max-width: 80vw;
+  min-height: 100vh;
+  background-color: maroon;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin: 5px 15px;
+}
+
+.InfoContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 100%;
+}
+
+.PokedexStats {
+  background-color: olivedrab;
+
+  width: stretch;
+  height: auto;
+  padding: 16px;
+
+  flex: 1;
+  text-align: center;
+}
+
+.DetailCard {
+  background-color: orangered;
+  color: white;
+
+  min-width: 200px;
+  max-width: 300px;
+
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-content: center;
+}
+
+.DetailCard h1 {
+  text-transform: capitalize;
+  font-size: 24px;
+}
+
+.DetailCard p {
+  margin: 5px;
+}
+
+.DetailCard img {
+  min-width: 150px;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.FlashCardContainer {
+  background-color: greenyellow;
+
+  max-width: 60vw;
+  min-width: 350px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.FlashCard {
+  background-color: orange;
+  color: white;
+  font-size: 24px;
+  min-width: 200px;
+  min-height: 42px;
+
+  text-transform: capitalize;
+
+  display: flex;
+  justify-content: space-around;
+
+  padding-left: 20px;
+  margin: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
