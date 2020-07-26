@@ -1,3 +1,5 @@
+import './PokemonDetailCard.css';
+
 import React from "react";
 
 const PokemonDetailCard = ({ name , pkmnId , thumbUrl }) => {

@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.95);
   margin: 0;
   padding: 0;
 
@@ -38,23 +38,22 @@ body {
 }
 
 .Header {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  
+  padding: 16px;
+
   text-align: center;
 }
 
 .Header > h1 {
   font-family: "PokeFont Solid";
-  font-size: 4em;
-  margin-top: -1.2em;
-}
-
-.Header > h2 {
-  font-family: "PokeFont Hollow";
-  font-size: 1em;
-  margin-top: -0.5em;
+  font-size: 6em;
+  margin-top: -0.9em;
 }
 
 .Header > h1 + h2
 {
+  font-family: "PokeFont Hollow";
   font-size: 1.5em;
   margin-top: -2.2em;
 }
@@ -80,106 +79,6 @@ h3 {
   margin: 5px 15px;
 }
 
-.InfoContainer {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  width: 100%;
-}
-
-.InfoContainer > .Feature {
-  padding: 10px;
-}
-
-.Feature {
-  background-color: brown;
-}
-
-.Feature > h3 {
-  padding: 5px;
-}
-
-.PokedexStats {
-  background-color: olive;
-
-  width: stretch;
-  height: auto;
-  padding: 16px;
-
-  flex: 1;
-  text-align: center;
-}
-
-.PokedexStats > p {
-  padding: 16px;
-  background-color: olivedrab;
-  border: 7px solid rgb(0, 0, 0, 0.2);
-
-  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.05);
-}
-
-.DetailCard {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
-
-  min-width: 200px;
-  max-width: 300px;
-
-  display: flex;
-  flex-flow: column;
-  text-align: center;
-  align-content: center;
-}
-
-.DetailCard h1 {
-  text-transform: capitalize;
-  font-size: 24px;
-}
-
-.DetailCard p {
-  margin: 5px;
-}
-
-.DetailCard img {
-  min-width: 150px;
-  min-height: 150px;
-  padding: 10px;
-}
-
-.FlashCardContainer {
-  background-color: greenyellow;
-
-  min-width: 350px;
-
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.FlashCard {
-  background-color: orange;
-  border: 5px solid rgb(0, 0, 0, 0.15);
-  color: white;
-  font-size: 24px;
-  min-width: 200px;
-  min-height: 42px;
-
-  text-transform: capitalize;
-  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.25);
-
-  display: flex;
-  justify-content: space-around;
-
-  padding-left: 20px;
-  margin: 5px;
-}
-
-.FLashcard > p {
-  margin-bottom: -0.5em;
-  color: red;
-}
-
 .Footer {
   padding: 10px;
 }
@@ -203,5 +102,17 @@ h3 {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes FadeInFromNone {
+  from
+  {
+    display: block;
+    filter: brightness(inherit);
+  }
+  to {
+    display: block;
+    filter: brightness(1);
   }
 }

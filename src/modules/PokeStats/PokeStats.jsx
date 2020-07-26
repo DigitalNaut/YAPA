@@ -1,3 +1,5 @@
+import './PokeStats.css';
+
 import React from "react";
 
 function PokemonStats({ count }) {

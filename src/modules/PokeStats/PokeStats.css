@@ -1,0 +1,29 @@
+.PokedexStats {
+    background-color: olive;
+  
+    width: stretch;
+    height: auto;
+    padding: 16px;
+  
+    flex: 1;
+    text-align: center;
+  }
+  
+  .PokedexStats > p {
+    padding: 16px;
+    background-color: olivedrab;
+    border: 7px solid rgb(0, 0, 0, 0.2);
+  
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .InfoContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+  }
+  
+  .InfoContainer > .Feature {
+    padding: 10px;
+  }

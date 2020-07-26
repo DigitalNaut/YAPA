@@ -3,9 +3,9 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Pokedex } from "pokeapi-js-wrapper";
 
-import PokemonFlashCard from "./modules/PokemonFlashCard";
-import PokemonDetailCard from "./modules/PokemonDetailCard";
-import PokeStats from "./modules/PokeStats";
+import PokemonFlashCard from "./modules/PokemonFlashCard/PokemonFlashCard";
+import PokemonDetailCard from "./modules/PokemonDetailCard/PokemonDetailCard";
+import PokeStats from "./modules/PokeStats/PokeStats";
 
 const LOADING = (props) => <p className='loading'>{props.children}</p>;
 
@@ -113,9 +113,8 @@ function App() {
   return (
     <div className='App'>
       <div className='Header'>
-        <h2>Welcome to</h2>
-        <h1>YAPA!</h1>
-        <h2>(Yet Another Pokémon App)</h2>
+        <h1>YA-PA!</h1>
+        <h2>Yet Another... Pokémon App!</h2>
       </div>
       <div className='InfoContainer'>
         {/* {console.log("------")}

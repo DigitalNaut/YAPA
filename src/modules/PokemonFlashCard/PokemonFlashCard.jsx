@@ -1,3 +1,5 @@
+import './PokemonFlashCard.css';
+
 import React from "react";
 
 const PokemonFlashCard = ({ name , thumbUrl} ) => {
