@@ -23,30 +23,26 @@ function App() {
   const [pkmnStatsShowcase, setPkmnStatsShowcase] = useState([]);
   useEffect(() => {
     fetchStats()
-    .then((pkmnStats) => {
-      // Save states
-      setPkmnStatsCount(pkmnStats.count);
-      setPkmnStatsShowcase(pkmnStats.results);
-    })
-    // Lower flag
-    .then(() => setLoadingStats(false));
+      .then((pkmnStats) => {
+        // Save states
+        setPkmnStatsCount(pkmnStats.count);
+        setPkmnStatsShowcase(pkmnStats.results);
+      })
+      // Lower flag
+      .then(() => setLoadingStats(false));
   }, []);
-  
+
   const [aRandomPkmnId, setRandomHighlightID] = useState(0);
   useEffect(() => {
-
     // Select a random pokemon to highlight out of fetched total
     let randPkmn = Math.min(Math.ceil(Math.random() * pkmnStatsCount), 807);
     console.log("Random Pkmn Selected: " + randPkmn);
     setRandomHighlightID(randPkmn); // Newest pokemon are not on the DB yet
-
   }, [pkmnStatsCount]);
-
 
   const [loadingHighlight, setLoadingHighlight] = useState(true);
   const [pkmnToHighlight, setPkmnHighlight] = useState();
   useEffect(() => {
-
     // Fetch pokemon data for a random Pokemon ID
     try {
       fetchPkmn(aRandomPkmnId)
@@ -129,7 +125,8 @@ function App() {
 
         {/* {console.log("Loading highlight? " + loadingHighlight)}
         {console.log("Highlight Pkm: " + pkmnToHighlight)} */}
-        <div>
+        <div className="Feature">
+          <h3>Featured Pokémon:</h3>
           {loadingHighlight ? <LOADING /> : <PokemonDetailCard pkmnId={pkmnToHighlight.id} name={pkmnToHighlight.name} thumbUrl={pkmnToHighlight?.sprites.front_default} />}
         </div>
       </div>
@@ -138,6 +135,13 @@ function App() {
         {console.log("Data length: " + pkmnData.length)}
         {console.log("---//---")} */}
         {loadingPkmnData ? <LOADING /> : pkmnData.length === 0 ? <LOADING /> : pkmnData.map((aPkmn) => (aPkmn ? <PokemonFlashCard name={aPkmn.name} thumbUrl={aPkmn.sprite} key={aPkmn.name} /> : <p>No flash card loaded</p>))}
+      </div>
+      <div className='Footer'>
+        <div className='Footer-credits'>
+          <div>
+            Font made from <a href='http://www.onlinewebfonts.com'>oNline Web Fonts</a> is licensed by CC BY 3.0
+          </div>
+        </div>
       </div>
     </div>
   );

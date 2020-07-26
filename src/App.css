@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "Frutiger Neue W02 Thin";
+  src: url("fonts/@font-face/Frutiger Neue W02 Thin.eot"); /* IE9 Compat Modes */
+  src: url("fonts/@font-face/Frutiger Neue W02 Thin.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("fonts/@font-face/Frutiger Neue W02 Thin.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("fonts/@font-face/Frutiger Neue W02 Thin.woff") format("woff"), /* Pretty Modern Browsers */ url("fonts/@font-face/Frutiger Neue W02 Thin.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("fonts/@font-face/Frutiger Neue W02 Thin.svg#svgFontName") format("svg"); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "PokeFont Hollow";
+  src: local("PokeFont Hollow"), url(./fonts/PokeFont/Pokemon\ Hollow.ttf) format("woff");
+}
+@font-face {
+  font-family: "PokeFont Solid";
+  src: local("PokeFont Solid"), url(./fonts/PokeFont/Pokemon\ Solid.ttf) format("woff");
+}
+
 body {
   background-color: white;
   margin: 0;
@@ -21,25 +38,44 @@ body {
 }
 
 .Header {
-  padding: 10px;
-
   text-align: center;
 }
 
+.Header > h1 {
+  font-family: "PokeFont Solid";
+  font-size: 4em;
+  margin-top: -1.2em;
+}
+
+.Header > h2 {
+  font-family: "PokeFont Hollow";
+  font-size: 1em;
+  margin-top: -0.5em;
+}
+
+.Header > h1 + h2
+{
+  font-size: 1.5em;
+  margin-top: -2.2em;
+}
+
 .App {
+  max-width: 80vw;
+  min-height: 100vh;
   margin: 0;
 
   color: white;
-  max-width: 80vw;
-  min-height: 100vh;
   background-color: maroon;
+  font-family: "Frutiger Neue W02 Thin";
 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   margin: 5px 15px;
 }
@@ -51,8 +87,20 @@ h1, h2, h3 {
   width: 100%;
 }
 
+.InfoContainer > .Feature {
+  padding: 10px;
+}
+
+.Feature {
+  background-color: brown;
+}
+
+.Feature > h3 {
+  padding: 5px;
+}
+
 .PokedexStats {
-  background-color: olivedrab;
+  background-color: olive;
 
   width: stretch;
   height: auto;
@@ -62,8 +110,16 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.PokedexStats > p {
+  padding: 16px;
+  background-color: olivedrab;
+  border: 7px solid rgb(0, 0, 0, 0.2);
+
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
 .DetailCard {
-  background-color: orangered;
+  background-color: rgba(255, 255, 255, 0.05);
   color: white;
 
   min-width: 200px;
@@ -93,29 +149,52 @@ h1, h2, h3 {
 .FlashCardContainer {
   background-color: greenyellow;
 
-  max-width: 60vw;
   min-width: 350px;
 
   display: flex;
-  flex-direction: row;
+  flex: 1;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .FlashCard {
   background-color: orange;
+  border: 5px solid rgb(0, 0, 0, 0.15);
   color: white;
   font-size: 24px;
   min-width: 200px;
   min-height: 42px;
 
   text-transform: capitalize;
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.25);
 
   display: flex;
   justify-content: space-around;
 
   padding-left: 20px;
   margin: 5px;
+}
+
+.FLashcard > p {
+  margin-bottom: -0.5em;
+  color: red;
+}
+
+.Footer {
+  padding: 10px;
+}
+
+.Footer .Footer-credits {
+  font-size: x-small;
+}
+
+.Footer .Footer-credits a {
+  text-decoration: none;
+  color: white;
+}
+
+.Footer .Footer-credits a:hover {
+  text-decoration: underline;
 }
 
 @keyframes App-logo-spin {
