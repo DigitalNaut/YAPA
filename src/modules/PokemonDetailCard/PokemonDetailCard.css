@@ -1,36 +1,67 @@
 .DetailCard {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-  
-    min-width: 200px;
-    max-width: 300px;
-  
-    display: flex;
-    flex-flow: column;
-    text-align: center;
-    align-content: center;
-  }
-  
-  .DetailCard h1 {
-    text-transform: capitalize;
-    font-size: 24px;
-  }
-  
-  .DetailCard p {
-    margin: 5px;
-  }
-  
-  .DetailCard img {
-    min-width: 150px;
-    min-height: 150px;
-    padding: 10px;
-  }
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
 
-  .Feature {
-    background-color: brown;
-  }
-  
-  .Feature > h3 {
-    padding: 5px;
-  }
-  
+  min-width: 200px;
+  max-width: 300px;
+
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  align-content: center;
+  padding-bottom: 16px;
+}
+
+.DetailCard h1 {
+  text-transform: capitalize;
+  font-size: 24px;
+}
+
+.DetailCard .InfoReveal {
+  opacity: 0;
+
+  animation: FadeInFromNone 0.5s ease-out 6s forwards;
+}
+
+.DetailCard h2.InfoReveal {
+  opacity: 0;
+
+  animation: FadeInFromNone 0.5s ease-out 3s forwards;
+}
+
+.DetailCard p {
+  margin: 5px;
+}
+
+.DetailCard img {
+  min-width: 150px;
+  min-height: 150px;
+  padding: 10px;
+
+  filter: brightness(0);
+
+  animation: FadeInFromNone 4s ease-out 0s;
+  animation: DarkenIn 5.5s ease-out 2s forwards;
+}
+
+.Feature {
+  background-color: brown;
+}
+
+.Feature > .Title {
+  margin: 0;
+
+  font-family: "PokeFont Hollow";
+}
+
+.Title > h2 {
+  margin-top: -1.5em;
+
+  font-size: 1.5em;
+}
+
+.Title > h3 {
+  font-size: 1em;
+
+  font-family: "PokeFont Solid";
+}

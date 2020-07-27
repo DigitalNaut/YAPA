@@ -6,6 +6,8 @@ import { Pokedex } from "pokeapi-js-wrapper";
 import PokemonFlashCard from "./modules/PokemonFlashCard/PokemonFlashCard";
 import PokemonDetailCard from "./modules/PokemonDetailCard/PokemonDetailCard";
 import PokeStats from "./modules/PokeStats/PokeStats";
+import Footer from "./modules/Footer/Footer"
+import Header from "./modules/Header/Header"
 
 const LOADING = (props) => <p className='loading'>{props.children}</p>;
 
@@ -112,10 +114,7 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='Header'>
-        <h1>YA-PA!</h1>
-        <h2>Yet Another... Pokémon App!</h2>
-      </div>
+      <Header />
       <div className='InfoContainer'>
         {/* {console.log("------")}
         {console.log("Loading stats? " + loadingStats)}
@@ -125,7 +124,9 @@ function App() {
         {/* {console.log("Loading highlight? " + loadingHighlight)}
         {console.log("Highlight Pkm: " + pkmnToHighlight)} */}
         <div className="Feature">
-          <h3>Featured Pokémon:</h3>
+          <span className="Title">
+          <h3>Who's that</h3><h2>Pokémon?!</h2>
+          </span>
           {loadingHighlight ? <LOADING /> : <PokemonDetailCard pkmnId={pkmnToHighlight.id} name={pkmnToHighlight.name} thumbUrl={pkmnToHighlight?.sprites.front_default} />}
         </div>
       </div>
@@ -135,13 +136,7 @@ function App() {
         {console.log("---//---")} */}
         {loadingPkmnData ? <LOADING /> : pkmnData.length === 0 ? <LOADING /> : pkmnData.map((aPkmn) => (aPkmn ? <PokemonFlashCard name={aPkmn.name} thumbUrl={aPkmn.sprite} key={aPkmn.name} /> : <p>No flash card loaded</p>))}
       </div>
-      <div className='Footer'>
-        <div className='Footer-credits'>
-          <div>
-            Font made from <a href='http://www.onlinewebfonts.com'>oNline Web Fonts</a> is licensed by CC BY 3.0
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }
