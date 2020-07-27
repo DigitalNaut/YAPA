@@ -1,5 +1,7 @@
 import "./App.css";
 
+import LoadingPokeball from './images/PokeballLoading.webp'; 
+
 import React, { useEffect, useState } from "react";
 import { Pokedex } from "pokeapi-js-wrapper";
 
@@ -9,7 +11,7 @@ import PokeStats from "./modules/PokeStats/PokeStats";
 import Footer from "./modules/Footer/Footer"
 import Header from "./modules/Header/Header"
 
-const LOADING = (props) => <p className='loading'>{props.children}</p>;
+const LOADING = (props) => <img src={LoadingPokeball} alt="Loading..." width="128px" height="128px" />;
 
 const aPokedex = new Pokedex({
   protocol: "https",
